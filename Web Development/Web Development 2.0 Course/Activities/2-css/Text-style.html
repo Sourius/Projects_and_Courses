@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Text</title>
+		<link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+
+		
+		<style type="text/css">
+			body{
+				background-color: honeydew;
+			}
+			
+			p{
+				font-family: Chilanka, cursive;
+				font-style: italic;
+				//text-decoration:underline;
+			}
+			
+			#notes{
+				font-family: Chilanka, cursive;
+				font-weight: bold;
+				font-style: italic;
+				clear:both;
+			}
+			
+			.underlined{
+				text-decoration:underline;
+			}
+			
+			#top-btn{
+				text-decoration: none;
+				font-weight:bold;
+				background-color:lightgrey;
+				border:2px black solid;
+				margin:10px 10px 10px 10px;
+				padding:10px;
+				font-size:20px;
+				font-style:normal;
+				color:black;
+				border-radius:20%;
+			}
+			
+			#first-par p{
+				padding:10px;
+				text-align:center;
+				background-color:skyblue;
+				width:45%;
+				float:left;
+			}
+			
+			#second-par p{
+				padding:10px;
+				float:right;
+				text-align:justify;
+				background-color:lightblue;
+				width:45%;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1 id="top">Web Page with text style</h1>
+		
+		<div id="first-par">
+			<p class="underlined">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		
+		<div id="second-par">
+			<p class="underlined">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		
+		<div id="notes">
+			<hr>
+			<h2>Notes</h2>
+			<p>
+				<span class="underlined">Basic text formatting properties:</span>
+				<ul>
+					<li>font-family</li>
+					<li>font-size</li>
+					<li>font-style</li>
+					<li>text-decoration</li>
+					<li>text-align</li>
+					<li>text-transform</li>
+					<li>etc</li>
+				</ul>
+			</p>
+			
+		</div>
+		
+		<hr>
+		<p>
+			<a id="top-btn" href="#top">Top</a>
+		</p>
+	</body>
+</html>

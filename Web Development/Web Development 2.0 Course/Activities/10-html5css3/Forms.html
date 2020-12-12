@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<title>HTML5 and CSS3</title>
+	</head>
+	
+	<body>
+		<h1>HTML5 form elements</h1>
+		
+		<form id="myForm" action="processform.php" method="post">
+			<p>Placeholder: <input type="text" placeholder="Insert Name here" /></p>
+			<p>Autofocus: <input type="text" autofocus /></p>
+			<p>Autocomplete-off: <input type="text" autocomplete="off" /></p>
+			<p>Required: <input type="text" required /></p>
+			
+			<p>Email: <input type="email" /></p>
+			<p>Password: <input type="password" /></p>
+			
+			<p>Pattern: <input type="text" pattern="[0-9]" /></p>
+			
+			<datalist id="names">
+				<select>
+					<option value="Computer">Computer</option>
+					<option value="Laptop">Laptop</option>
+					<option value="Mobile">Mobile</option>
+				</select>
+			</datalist>
+			<p>Autocomplete: <input type="text" autocomplete list="names" /></p>
+			
+			<p>Submit: <input type="submit" value="submit" required /></p>
+		</form>
+		
+		<p>Multiple file upload: <input type="file" multiple /></p>
+		<p>Code outside form: <input form="myForm" type="submit" formaction="processform2.php" formmethod="post" value="submit to processform2" /></p>
+	</body>
+</html>

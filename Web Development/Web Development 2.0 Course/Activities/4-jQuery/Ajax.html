@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jQuery and Ajax</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+		
+		<style rel="stylesheet" type="text/css">
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		<p></p>
+		<script type="text/javascript">
+			// ajax only works from server --> cant use on local files
+		/*	
+			jQuery.get("info.txt", function(data){ // info.txt --> url
+				alert(data);
+			});
+		*/	
+			 $.ajax("info.txt") // info.txt --> url
+                .done(function(data) {
+					$("p").html(data);
+                })
+                .fail(function() {
+					alert("Could not get data");
+                });
+				
+		</script>
+	</body>
+</html>

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		
+		<title>Bootstrap</title>
+		
+		<style type="text/css">
+			body{
+				position:relative;
+				margin:0 auto;
+			}
+		
+			input{
+				margin:0em 0.3em 0.2em 0em;
+			}
+			
+			#reg-email{
+				width:20em;
+				height: 3em;
+			}
+			
+			.jumbotron{
+				background-color: lightblue;
+			}
+			
+			#cards .row .card{
+				margin: 0 0.5em;
+			}
+			
+			#download-zone{
+				background-color:#07eaff;
+				padding:5em 0;
+				margin:2em 0;
+			}
+			
+			#download-zone img{
+				height:10%;
+				width:10%;
+			}
+		</style>
+		
+	</head>
+	
+	<body data-spy="scroll" data-target="#menu">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id="menu">
+			<a class="navbar-brand" href="">MyApp</a>
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-items" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		
+			<div class="collapse navbar-collapse" id="menu-items">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#download-zone">Download</a>
+					</li>
+				</ul>
+			
+				<form class="form-inline pull-xs-right" id="login">
+					<div class="form-group">
+						<input type="email" class="form-control" id="email-lg" name="email-lg" placeholder="email"/>
+						
+						<input type="password" class="form-control" id="password" name="password" placeholder="password"/>
+						
+						<button class="btn btn-outline-success" type="submit">Login</button>
+					</div>
+				</form>
+			</div>
+		</nav>
+		
+		<div id="content">
+			<div class="jumbotron justify-content-center text-center" id="jumbo">
+				<div class="container col-md-6">
+					<h1 class="display-4">My Awesome App!</h1>
+					<p class="lead">This is why YOU should download this fantastic app!</p>
+					<hr class="my-4">
+					<p>Want to know more? Join our mailing list!</p>
+					<form class="form-inline justify-content-center">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">@</span>
+							</div>
+							
+							<input type="email" id="reg-email" class="form-control" placeholder="Your email" aria-label="email" aria-describedby="basic-addon1" />
+						</div>
+						
+						<button type="submit" class="btn btn-primary btn-lg" href="#" role="button">Sign up</a>
+					</form>
+				</div>
+			</div>	
+			
+			<div class="container justify-content-center text-center" id="about">
+				<div class="row-2" id="appSummary">
+					<h1>Why This App is Awesome?</h1>
+					<p class="lead">Summary, once again, of your app's awesomeness</p>
+				</div>
+			</div>
+
+			<div class="container" id="cards">
+				<div class="row justify-content-center">
+					<div class="card" style="width: 18rem;">
+						<img src="https://images.unsplash.com/photo-1597142867093-5a65141a9d10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title"><i class="fa fa-anchor" aria-hidden="true"></i> Card title</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						</div>
+					</div>
+				
+					<div class="card" style="width: 18rem;">
+						<img src="https://images.unsplash.com/photo-1597142867093-5a65141a9d10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="..." />
+						<div class="card-body">
+							<h5 class="card-title"><i class="fa fa-bicycle" aria-hidden="true"></i> Card title</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						</div>
+					</div>
+				
+					<div class="card" style="width: 18rem;">
+						<img src="https://images.unsplash.com/photo-1597142867093-5a65141a9d10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="..." />
+						<div class="card-body">
+							<h5 class="card-title"><i class="fa fa-birthday-cake" ></i> Card title</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="conteiner justify-content-center text-center" id="download-zone">
+				<h1>Download the app!</h1>
+				<p>Really, why should i download this app??</p>
+				<img src="images/appstore.png" alt="" class="rounded"/>
+			</div>
+		</div>
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>

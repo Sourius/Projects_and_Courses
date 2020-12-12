@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<title>HTML5 and CSS3</title>
+	</head>
+	
+	<body>
+		<h1>HTML5 Video and Audio</h1>
+		<video width="320px" height=240px" controls autoplay loop id="video">
+			<source src="Earth_Zoom_In.mp4" type="video/mp4" />
+			Please upgrade your browser
+		</video>
+		<input type="button" value="Pause" id="video-btn" />
+		
+		<audio controls >
+			<source src="slowmotion.mp3" type="audio/mpeg" />
+			Please upgrade your browser
+		</audio>
+		
+		<script>
+			document.getElementById("video-btn").onclick = function(){
+				if(document.getElementById("video").paused){
+					document.getElementById("video").play();
+					this.value = "Pause";
+				}
+				else{
+					document.getElementById("video").pause();
+					this.value = "Play";
+				}
+			}
+		</script>
+		
+	</body>
+</html>

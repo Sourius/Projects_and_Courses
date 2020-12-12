@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Javascript</title>
+	</head>
+	
+	<body>
+		<h1>Statements in javascript</h1>
+		
+		<p>What is the magic word!</p>
+		<p><input id="word" type="text"/></p>
+		<p><button id="word-btn">Enter</button></p>
+		
+		<script type="text/javascript">
+			//var x = 1;
+			
+			/*var x = 2;
+			if(x == 1){
+				console.log("x is 1");
+			}
+			else{
+				console.log("x is not 1");
+			}*/
+			
+			document.getElementById("word-btn").onclick = function(){
+				//console.log("Hi!");
+				var wordEntered = document.getElementById("word").value;
+				//console.log(wordEntered);
+				if(wordEntered.toLowerCase() == "abracadabra"){
+					alert("Well done.");
+				}
+				else{
+					alert("Try again.");
+				}
+			}
+		</script>
+	</body>
+</html>

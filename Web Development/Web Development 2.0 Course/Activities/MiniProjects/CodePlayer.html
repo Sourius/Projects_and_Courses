@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<title>Code Player</title>
+		<link rel="stylesheet" href="css/codeplayer.css"> 
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+	</head>
+	
+	<body>
+		<div id="header">
+			<div id="logo">CodePlayer</div>
+			<div id="button-container">
+				<div class="toggle-btn active" id="html">HTML</div>
+				<div class="toggle-btn" id="css">CSS</div>
+				<div class="toggle-btn" id="js">JavaScript</div>
+				<div class="toggle-btn active" id="output">Output</div>
+			</div>
+		</div>
+		
+		<div id="container">
+			<textarea id="html-panel" class="panel" placeholder="html"></textarea>
+			<textarea id="css-panel" class="panel hidden" placeholder="css"></textarea>
+			<textarea id="js-panel" class="panel hidden" placeholder="javascript"></textarea>
+			<iframe id="output-panel" class="panel"></iframe>
+		</div>
+		
+		<script type="text/javascript" src="js/codeplayer.js"></script>
+	</body>
+</html>

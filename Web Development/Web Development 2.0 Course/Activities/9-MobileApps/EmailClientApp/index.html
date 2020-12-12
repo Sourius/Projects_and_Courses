@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My App</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="app.min.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+		<div class="app-page" data-page="home">
+			<div class="app-topbar blue">
+				<div class="app-title">Send an Email</div>
+			</div>
+		
+			<div class="app-content">
+				<p class="app-section">
+					Click below to send an email
+				</p>
+				
+				<div class="app-section" id="contact-list">
+					List:
+				</div>
+				
+				<div class="app-section">
+					<div class="app-button" id="new-user">
+						Send to new user
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="app-page" data-page="sendemail">
+			<div class="app-topbar">
+				<div class="app-title">Send Email</div>
+				<div class="right app-button" id="done">Done</div>
+			</div>
+
+			<div class="app-content">
+				<div class="app-section" id="custom-message">
+					
+				</div>
+				
+				<div class="app-section">
+					From: <input class="app-input" id="sender-email" placeholder="Sender Email Address"></input>
+				</div>
+
+				<div class="app-section">
+					To: <input class="app-input" id="recipient-email" placeholder="Recipient Email Address"></input>
+				</div>
+
+				<form class="app-section">
+					<input class="app-input" name="subject" id="subject" placeholder="Subject">
+					<textarea class="app-input" name="message" id="message" placeholder="Message"></textarea>
+					<div class="app-button green app-submit" id="send-button">Send</div>
+				</form>
+			</div>
+		</div>
+		
+		<script src="zepto.js"></script>
+		<script src="app.min.js"></script>
+	
+		<script type="text/javascript">
+			function resetList(){
+				var recipientList = new Array();
+				localStorage.setItem("recipient-list", JSON.stringify(recipientList));
+			}
+				
+			App.controller("home", function(page){
+				if(typeof localStorage !== "undefined"){
+					$(page).find("#new-user").clickable().on("click", function (){
+						if(localStorage.getItem("recipient-email") !== null){
+							localStorage.removeItem("recipient-email");
+						}
+						App.load('sendemail');
+					});
+					
+					if(localStorage.getItem("recipient-list") !== null){
+						var recipientList = JSON.parse(localStorage.getItem("recipient-list"));
+						$.each(recipientList, function(index, value){
+							$(page).find("#contact-list").append("<div class='app-button redirect'>"+value+"</div>");
+						});
+						
+						$(page).find("#contact-list").show();
+						$(page).find(".redirect").clickable().on("click",function (){
+							localStorage.setItem("recipient-email", $(this).html());
+							App.load('sendemail');
+						});
+					}
+					else{
+						$(page).find("#contact-list").hide();
+					}
+				}
+			});
+			
+			App.controller("sendemail", function(page){
+				$(page).find("#custom-message").hide();
+				
+			
+				if(typeof localStorage !== "undefined"){
+					if(localStorage.getItem("sender-email") !== null){
+						// sender email exists
+						$(page).find("#sender-email").val(localStorage.getItem("sender-email"));
+					}
+					
+					if(localStorage.getItem("recipient-email") !== null){
+						$(page).find("#recipient-email").val(localStorage.getItem("recipient-email"));
+					}
+				}
+				
+				$(page).find("#done").clickable().on("click", function(){
+					App.load("home");
+				});
+				
+				$(page).find('#send-button')
+				.clickable()
+				.on('click', function () {
+					// send email
+					$.ajax({
+						type: 'POST',
+						url: './php/sendmail.php/',
+						data: {
+							to: $("#recipient-email").val(),
+							from: $("#sender-email").val(),
+							subject: $("#subject").val(),
+							message: $("#message").val()
+						},
+						datatype: 'jsonp',
+						timeout: 300,
+						context: $('body'),
+						success: function(data){
+							if(data.success == true){
+								$(page).find("#custom-message").html("Email send successfully").show();
+							}
+							else{
+								$(page).find("#custom-message").html("Couldn't send email! Please try again later.").show()
+							}
+							this.append(data.success);
+						},
+						error: function(xhr, type){
+							$(page).find("#custom-message").html("Couldn't send email! Please try again later.").show()
+						}
+					});
+					
+					//save emails
+					if(typeof localStorage !== 'undefined'){
+						localStorage.setItem("sender-email", $("#sender-email").val());
+						
+						var recipientList = new Array();
+						
+						if(localStorage.getItem("recipient-list") !== null){
+							recipientList = JSON.parse(localStorage.getItem("recipient-list"));
+						}
+						
+						//check recipient email has been saved
+						if($.inArray($("#recipient-email").val(), recipientList) == -1){
+							//alert("not in array");
+							recipientList.push($("#recipient-email").val());
+							recipientList.sort();
+							localStorage.setItem("recipient-list", JSON.stringify(recipientList));
+							console.log(recipientList);
+						}
+						else{
+							alert("in array");
+						}
+					}
+					else{
+						
+					}
+				});
+			});
+			
+			try {
+				App.restore();
+			}
+			catch (err) {
+				App.load('home');
+			}
+		
+		</script>
+	</body>
+</html>

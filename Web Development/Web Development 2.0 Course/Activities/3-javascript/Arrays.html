@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Javascript</title>
+	</head>
+	
+	<body>
+		<h1>Arrays with Javascript</h1>
+		<p>Use the console!</p>
+		
+		<script type="text/javascript">
+			var myArray = new Array();
+			myArray[0] = "pizza";
+			myArray[1] = "chocolate";
+			console.log(myArray);
+			
+			var tweets = ["Morning Everybody","Save the planet"];
+			console.log(tweets);
+			//add element from last
+			tweets.push("Be green");
+			tweets.push("Hello World!");
+			console.log(tweets);
+			
+			//delete elements between index 2 and 3
+			tweets.splice(2,3);
+			console.log(tweets);
+			
+			//add element in first index
+			tweets.splice(0,0,"Hello World!");
+			console.log(tweets);
+			
+			//delete elements at index 0 and 1 and add element at 0
+			tweets.splice(0,2,"Good Morning Everybody");
+			console.log(tweets);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+ul.nav.navbar-nav{
+	flex-direction:row;
+}
+
+li.nav-item{
+	margin: 0 1em;
+}
+
+#data-form{
+	margin-top:5em;
+}

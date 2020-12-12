@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Javascript</title>
+	</head>
+	
+	<body>
+		<h1>Javascript</h1>
+		
+		<input id="text-in" type="text"/>
+		<button id="change-text-btn">Change text</button>
+		<p id="text-out">This is some text.</p>
+		
+		<script type="text/javascript">
+			/*
+			var x = 10;
+			alert(x);
+			var name = "Name";
+			alert(name);
+			*/
+			document.getElementById("change-text-btn").onclick = function(){
+				alert("Changing text ...");
+				document.getElementById("text-out").innerHTML = document.getElementById("text-in").value;
+			}
+		</script>
+	</body>
+</html>

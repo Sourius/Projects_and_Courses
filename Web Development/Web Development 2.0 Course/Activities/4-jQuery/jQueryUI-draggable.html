@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jQueryUI</title>
+		
+		<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+		<script src="jquery-ui/jquery-ui.min.js"></script>
+		
+		<style rel="stylesheet" type="text/css">
+			#draggable { 
+				width: 150px; 
+				height: 150px; 
+				padding: 0.5em; 
+				opacity:80%;
+				background-color:lightgreen;
+			}
+			
+			#big-container{
+				width: 400px; 
+				height: 400px;
+				background-color:lightblue;
+			}
+			
+			#container{
+				width: 200px; 
+				height: 200px;
+				background-color:pink;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<h1>jQueryUI</h1>
+		
+		<div id="draggable" class="ui-widget-content">
+			<p>Drag me horitzontally</p>
+		</div>
+		
+		<div id="big-container">
+			<div id="container">
+				<p>Drag me around the container</p>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			jQuery("#draggable").draggable();
+			
+			jQuery("#draggable").draggable({
+				axis:"x"
+			});
+			
+			jQuery("#big-container").draggable();
+			
+			jQuery("#container").draggable({
+				containment: "#big-container", scroll: true
+			});
+		</script>
+	</body>
+</html>

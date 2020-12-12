@@ -1,0 +1,27 @@
+#score{
+	position:relative;
+	margin:0 auto;
+}
+
+.circle{
+	border-radius:50%;
+}
+
+.square{
+	position:relative;
+	clear:both;
+}
+
+.first-shape{
+	background-color:green;
+	clear:both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height:100px;
+	width:100px;
+}
+
+h1{
+	text-align:center;
+}

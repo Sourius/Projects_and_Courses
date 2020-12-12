@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<title>HTML5 and CSS3</title>
+		
+		<style>
+			#my-canvas{
+				border: 1px solid grey;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<h1>HTML5 Canvas</h1>
+		<canvas id="my-canvas" width="500" height="400">
+			
+		</canvas>
+		
+		<script>
+			var myCanvas = document.getElementById("my-canvas");
+			var context = myCanvas.getContext("2d");
+			
+			var gradient = context.createLinearGradient(150, 100, 350, 300);
+			gradient.addColorStop(0, "white");
+			gradient.addColorStop(1, "#49C900");
+			
+			//context.fillStyle = "#49C900";
+			context.fillStyle = gradient;
+			context.fillRect(150,100,200,200);
+			
+			context.moveTo(150,300);
+			context.lineTo(350,100);
+			
+			context.moveTo(350,300);
+			context.lineTo(150,100);
+			
+			context.strokeStyle = "#f42924";
+			context.lineWidth = "2";
+			context.stroke();
+			
+			context.beginPath();
+			context.arc(80, 150, 50, 0, 2*Math.PI);
+			context.stroke();
+			
+			var textGradient = context.createLinearGradient(200, 50, 300, 50);
+			
+			textGradient.addColorStop(0, "red");
+			textGradient.addColorStop(1, "yellow");
+			
+			context.fillStyle = textGradient;
+			context.font = "20px Arial";
+			context.fillText("My Canvas", 200, 50);
+		</script>
+	</body>
+</html>

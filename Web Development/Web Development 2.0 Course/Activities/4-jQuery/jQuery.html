@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jQuery</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+		
+		<style rel="stylesheet" type="text/css">
+			#circle{
+				border-radius:50%;
+				width:150px;
+				height:150px;
+				margin:auto auto;
+				margin-right: 10px;
+				float: left;
+				background-color:green;
+			}
+
+			.square{
+				width:150px;
+				height:150px;
+				margin:auto auto;
+				margin-right: 10px;
+				float: left;
+				background-color:blue;
+			}
+			
+			p{
+				clear:both;
+			}
+			
+			#p-btn{
+				display:block;
+				top:20px;
+				clear:both;
+			}
+			
+			#hiddenP{
+				display:none;
+			}
+			
+			#fadeIn-btn{
+				display:block;
+				margin-top:20px;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<div id="circle"></div>
+		<div class="square"></div>
+		<div class="square"></div>
+		
+		<iframe id="codestars" src="https://www.codestars.com/" title="Code Stars"></iframe>
+		
+		<hr>
+		<p id="fadeOutP">Click the green circle to change the text.</p>
+		<button id="p-btn">Click</button>
+		
+		<button id="fadeIn-btn">Click to see hidden paragraph</button>
+		<p id="hiddenP">This text was hidden</p> 
+		
+		<script type="text/javascript">
+		/*
+			//check if jQuery is working or not
+			if(typeof jQuery == "undefined"){
+				//not working
+				alert("jquery has not been installed!");
+			}
+			else{
+				//working
+			}
+		*/
+		/*
+			jQuery("#circle").click(function(){
+				alert("circle was clicked");
+			});
+			
+			jQuery(".square").click(function(){
+				alert("a square was clicked");
+			});
+		*/
+		/*		
+			jQuery("#circle").click(function(){
+				jQuery("p").html("Hello World!");
+			});
+		*/
+		/*
+			jQuery(".square").hide();
+			jQuery("p").html("Put the mouse over the the green circle to change the iframe web.");
+			
+			jQuery("#circle").hover(function(){
+				jQuery("#codestars").attr("src", "https://edition.cnn.com/");
+			}, function(){
+				jQuery("#codestars").attr("src", "https://www.codestars.com/");
+			});
+			
+			jQuery("#circle").click(function(){
+				jQuery("#circle").css("background-color","purple");
+			});
+		*/
+		/*
+			jQuery("p").html("Click the object you want to make disappear.");
+		
+			jQuery("#circle").click(function(){
+				jQuery("#circle").css("display","none");
+			});
+			
+			jQuery(".square").click(function(){
+				jQuery(this).css("display","none");
+			});
+		*/
+		/*
+			jQuery("div").click(function(){
+				jQuery(this).css("display","none");
+			});
+		*/
+			jQuery("iframe").hide();
+		
+			jQuery("#circle").click(function(){
+				jQuery(this).fadeOut("slow", function(){
+					alert("Fade Out Completed");
+				});
+			});
+			/*
+			jQuery("#fadeOutP").html("Click the button to make the paragraph fadeOut.");
+			*/
+			/*
+			jQuery("#p-btn").click(function(){
+				jQuery("#fadeOutP").fadeOut("slow");
+			});
+			*/
+			jQuery("#fadeIn-btn").click(function(){
+				jQuery("#hiddenP").fadeIn("slow");
+			});
+			
+			jQuery("#fadeOutP").html("Click the button.");
+			jQuery("#p-btn").click(function(){
+				if(jQuery("#fadeOutP").css("display") == "none"){
+					jQuery("#fadeOutP").fadeIn();
+				}
+				else{
+					jQuery("#fadeOutP").fadeOut();
+				}
+			});
+		</script>
+	</body>
+</html>

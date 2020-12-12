@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Javascript</title>
+	</head>
+	
+	<body>
+		<h1>Web Page with Javascript</h1>
+		
+		<p id="paragraph1">Hello World!</p>
+		<button id="change-btn">Change Text of 1st Paragraph</button>
+		
+		<p id="paragraph2">Javascript is ...</p>
+		<button id="change-btn-2">Change Text of 2nd Paragraph</button>
+		
+		<p id="empty-paragraph"></p>
+		<button id="create-paragraph-btn">Create paragraph</button>
+		
+		<p id="newParagraph">Here is a new Paragraph!</p>
+		<button id="change-style-btn">Change style!</button>
+		
+		<script type="text/javascript">
+			//alert("Hello!");
+			//document.getElementById("text").innerHTML = "Hello!";
+			
+			document.getElementById("change-btn").onclick = function(){
+				//alert("Button has been clicked!");
+				document.getElementById("paragraph1").innerHTML = "The first button has been clicked!";
+			};
+			
+			document.getElementById("change-btn-2").onclick = function(){
+				document.getElementById("paragraph2").innerHTML = "The second button has been clicked!";
+			};
+			
+			document.getElementById("create-paragraph-btn").onclick = function(){
+				document.getElementById("empty-paragraph").innerHTML = "We are adding text to the empty paragraph!";
+			};
+			
+			document.getElementById("change-style-btn").onclick = function(){
+				//document.getElementById("newParagraph").style.color = "red";
+				//document.getElementById("newParagraph").style.fontSize = "20px";
+				document.getElementById("newParagraph").style.display = "none";
+			};
+		</script>
+	</body>
+</html>

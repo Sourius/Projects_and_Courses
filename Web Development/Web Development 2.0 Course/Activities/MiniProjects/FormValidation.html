@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jQuery and Regex</title>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+		<script src="jquery-ui/jquery-ui.js"></script>
+		<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+		
+		<style rel="stylesheet" type="text/css">
+			body{
+				font-family: helvetica sans-serif;
+				font-size:130%;
+			}
+			
+			input{
+				padding:5px;
+				font-size: 20px;
+				border-radius:5px;
+				border: 1px solid grey;
+				width:300px;
+			}
+			
+			label{
+				position: relative;
+				top:12px;
+				width:180px;
+				float:left;
+			}
+			
+			#wrapper{
+				width:550px;
+				margin:0 auto;
+			}
+			
+			.form-element{
+				margin: 10px;
+			}
+			
+			#submit-btn{
+				width:130px;
+				margin-left:180px;
+			}
+			
+			#errorMessage{
+				font-size:90%;
+				color:red;
+				//text-align:center;
+			}
+			
+			#successMessage{
+				font-size:90%;
+				color:green;
+				display:none;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<h1>Form validation system</h1>
+		
+		<div id="wrapper">
+			<div id="successMessage">Registrating user ....</div>
+			<div id="errorMessage"></div>
+		
+			
+				<div class="form-element">
+					<label for="email">Email:</label>
+					<input type="text" name="email" id="email"  placeholder="example@gmail.com"></input>
+				</div>
+				
+				<div class="form-element">
+					<label for="phone">Telephone:</label>
+					<input type="text" name="phone" id="phone"  placeholder="123456789"></input>
+				</div>
+				
+				<div class="form-element">
+					<label for="password">Password:</label>
+					<input type="password" name="password" id="password" ></input>
+				</div>
+				
+				<div class="form-element">
+					<label for="passwordConfirm">Confirm Password:</label>
+					<input type="password" name="passwordConfirm" id="passwordConfirm" ></input>
+				</div>
+				
+				<div class="form-element">
+					<input type="submit" name="submit-btn" id="submit-btn" value="Register"></input>
+				</div>
+			
+		</div>
+		
+		<script type="text/javascript">
+			function validateEmail(email) {
+				var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				return regex.test(email);
+			}
+		
+			jQuery("#submit-btn").click(function(){
+				var errorMessage = "";
+				var fieldMissing = "";
+				jQuery("#successMessage").hide();
+				
+				if(jQuery("#email").val() == "") fieldMissing+="<br>Email";
+				if(jQuery("#phone").val() == "") fieldMissing+="<br>Telephone";
+				if(jQuery("#password").val() == "") fieldMissing+="<br>Password";
+				if(jQuery("#passwordConfirm").val() == "") fieldMissing+="<br>Confirm Password";
+				
+				if(fieldMissing != ""){
+					errorMessage = "<p>The following fields are missing:"+fieldMissing;
+				}
+				else{
+					if(!validateEmail(jQuery("#email").val())){
+						errorMessage += "<p>Your email address is not valid</p>";
+					}
+				
+					if(!jQuery.isNumeric(jQuery("#phone").val())){
+						errorMessage += "<p>Your phone number is not valid</p>";
+					}
+				
+					if(jQuery("#password").val() != jQuery("#passwordConfirm").val()){
+						errorMessage += "<p>Your passwords don't match</p>";
+					}
+				}
+				if(errorMessage != ""){
+					jQuery("#errorMessage").html(errorMessage);
+					
+					jQuery("#errorMessage").show();
+				}
+				else{
+					jQuery("#errorMessage").hide();
+					jQuery("#successMessage").show();
+				}
+			});
+		</script>
+	</body>
+</html>

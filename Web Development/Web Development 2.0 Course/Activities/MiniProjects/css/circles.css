@@ -1,0 +1,19 @@
+.red{
+	background-color:red;
+	/*border: 2px red solid;*/
+}
+.green{
+	background-color:green;
+	/*border: 2px green solid;*/
+}
+.blue{
+	background-color:blue;
+	/*border: 2px blue solid;*/
+}
+.circle{
+	width:100px;
+	height:100px;
+	margin: 10px;
+	border-radius:50%;
+	float:left;
+}

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jQuery and Regex</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+		
+		<style rel="stylesheet" type="text/css">
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		<p></p>
+		<script type="text/javascript">
+			var regex = /is/;
+			var text = "Regex is great!";
+			
+			// match returns the first word that matches the regex or null
+			var result = text.match(regex);
+			console.log(result);
+			
+			//test returns true (text matches with regex) or false
+			console.log(regex.test(text));
+			
+			//returns all the words that match with regex
+			regex = /e/g;
+			console.log(text.match(regex));
+			
+		</script>
+	</body>
+</html>

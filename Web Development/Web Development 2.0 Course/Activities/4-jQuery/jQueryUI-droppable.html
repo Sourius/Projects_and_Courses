@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jQueryUI</title>
+		
+		<link rel="stylesheet" href="jquery-ui/jquery-ui.min.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+		<script src="jquery-ui/jquery-ui.min.js"></script>
+		
+		<style rel="stylesheet" type="text/css">
+			#big-box{
+				height:400px;
+				width: 400px;
+				background-color:green;
+			}
+			
+			#small-box{
+				height:200px;
+				width:200px;
+				background-color:lightblue;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<h1>jQueryUI-Droppable</h1>
+	
+		<div id="small-box"></div>
+		<div id="big-box"></div>
+		
+		<script type="text/javascript">
+			jQuery("#small-box").draggable();
+			jQuery("#big-box").droppable({
+				drop: function(event, ui){
+					jQuery("#small-box").draggable("option","disabled",true);
+				}
+			});
+			
+		</script>
+	</body>
+</html>

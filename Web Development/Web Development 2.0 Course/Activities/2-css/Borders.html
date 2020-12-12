@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Borders</title>
+		
+		<style type="text/css">
+			body{
+				background-color: honeydew;
+			}
+			
+			#red-square{
+				background-color:red;
+				border: 10px orange solid;
+			}
+			
+			#green-square{
+				background-color:green;
+				border: 10px lightgreen double;
+				border-radius: 50%;
+			}
+			
+			#blue-square{
+				background-color:blue;
+				border: 10px skyblue groove;
+				border-radius: 20px;
+			}
+			
+			.square{
+				width:100px;
+				height:100px;
+				float:left;
+				margin:2%;
+			}
+			
+			#notes{
+				clear:both;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<h1 id="top">Web Page with style</h1>
+		
+		<div id="red-square" class="square"></div>	
+		<div id="green-square" class="square"></div>
+		<div id="blue-square" class="square"></div>
+		
+		<div id="notes">
+			<hr>
+			<h2>Notes</h2>
+			<p>
+				<ul>
+					<li>border property is used to set the border<li>
+					<li>border property can be used in same way as margin property</li>
+				</ul>
+			</p>
+		</div>
+		
+		<hr>
+		<a href="#top">Top</a>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+h1{
+	text-align:center;
+}
+
+#imageCanvas{
+	height:300px;
+	width:400px;
+	border:1px solid grey;
+	margin-top:2em;
+	margin-bottom:1em;
+}
+
+#imageName{
+	margin-right:2em;
+}
+
+#grayScaleCanvas{
+	height:300px;
+	width:400px;
+	border:1px solid grey;
+	margin-top:2em;
+	margin-bottom:1em;
+}

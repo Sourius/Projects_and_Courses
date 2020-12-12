@@ -1,0 +1,33 @@
+h1{
+	color:blue;
+	text-align:center;
+}
+
+#first-div{
+	font-family:"Times New Roman", Times, serif;
+	border: 1px solid grey;
+	padding:20px;
+	margin-top: 1em;
+}
+
+#second-div{
+	font-family:Arial, Helvetica, sans-serif;
+	padding:20px;
+	margin-top:1em;
+	margin-bottom: 1em;
+}
+
+.yellowDiv{
+	background-color:yellow;
+}
+
+.brownDiv{
+	background-color:brown;
+}
+
+#myCanvas{
+	height:200px;
+	width:400px;
+	border:1px solid grey;
+	margin-top:2em;
+}

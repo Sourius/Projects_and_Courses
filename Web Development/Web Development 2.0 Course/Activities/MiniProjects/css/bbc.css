@@ -1,0 +1,78 @@
+#logo{
+	width:85%;
+	height:80%;
+	background-color:white;
+}
+
+#sign-in span{
+	padding-right: 5px;
+	float:right;
+	position: relative;
+    //top: 5px;
+}
+
+#sign-in img{
+	position:relative;
+    top: -5px;
+}
+
+#search-box input{
+	padding-left:5px;
+	width:70px;
+	background-color:lightgrey;
+	float:left;
+	border:0;
+	height:70%;
+}
+
+#search-box input:active{
+	border: 1px black solid;
+}
+
+#search-box img{
+	position:relative;
+	background-color:lightgrey;
+	margin:0;
+	padding:0;
+	float:left;
+}
+
+search-box img:active{
+	border: 1px black solid;
+}
+
+#search-box{
+	padding-left:5px;
+	padding-right:5px;
+	width:fit-content;
+}
+
+#top-bar{
+	width:80%;
+	margin:0 auto;
+	height: 30px;
+}
+
+#container{
+	
+}
+
+.top-bar-section{
+	float:left;
+	position: relative;
+	width:100px;
+	height:30px;
+	padding-top:10px;
+	text-align:center;
+	font-weight:bold;
+	border-right:1px lightgrey solid;
+}
+
+.menu-item:hover{
+	border-bottom:2px brown solid;
+}
+
+body{
+	margin:0;
+	padding:0;
+}
