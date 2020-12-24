@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,angular,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,angular,node
 
+.vs/
+
 ### Angular ###
 ## Angular ##
 # compiled output
