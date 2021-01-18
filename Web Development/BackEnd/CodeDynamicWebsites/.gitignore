@@ -1,0 +1,8 @@
+/*
+!/26_Final
+/26_Final/*
+!/26_Final/Student
+/26_Final/Student/img/*
+!/26_Final/Student/*.php
+!/26_Final/Student/includes/*.php
+!/.gitignore
